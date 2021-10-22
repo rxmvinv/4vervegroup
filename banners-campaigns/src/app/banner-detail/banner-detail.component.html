@@ -1,0 +1,15 @@
+<div *ngIf="banner">
+
+  <h2>{{banner.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{banner.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="banner.name" placeholder="name"/>
+    </label>
+    <label>text:
+      <input [(ngModel)]="banner.text" placeholder="text"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

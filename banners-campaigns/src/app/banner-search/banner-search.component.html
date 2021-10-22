@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Banner Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let banner of banners$ | async" >
+      <a routerLink="/detail/{{banner.id}}">
+        {{banner.name}}
+      </a>
+    </li>
+  </ul>
+</div>

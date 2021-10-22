@@ -1,0 +1,96 @@
+/* PostsComponent's private CSS styles */
+.banners {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.banners li {
+  position: relative;
+  cursor: pointer;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  border-radius: 4px;
+}
+
+.banners li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.banners a {
+  color: #888;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
+}
+
+.banners a:hover {
+  color:#607D8B;
+}
+
+.banners .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  font-family: Arial;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button.delete {
+  margin-left: 20px;
+  background-color: gray !important;
+  color: white;
+}
+
+button.selected {
+  background-color: #607D8B;
+}
+.banners .badge.selected {
+  background-color: rebeccapurple;
+}
+.campaign-banners {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.activity-section {
+  display: flex;
+}
+.campaigns {
+  list-style: none;
+}
+.campaigns .item {
+  margin: 20px auto;
+  border-bottom: 1px solid #888;
+  padding-bottom: 20px;
+}
+.banners-section {
+  margin: 20px auto;
+}

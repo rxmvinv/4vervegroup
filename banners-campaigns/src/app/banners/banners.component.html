@@ -1,0 +1,29 @@
+<h2>My Banners</h2>
+<div>
+  <label>Banner name:
+    <input #bannerName />
+  </label>
+  <label>Banner text:
+    <input #bannerText />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button 
+    (click)="add(bannerName.value, bannerText.value); bannerName.value='';  bannerText.value=''">
+    add
+  </button>
+</div>
+
+<ul class="banners">
+  <li *ngFor="let banner of banners">
+    <a routerLink="/detail/{{banner.id}}">
+      <span class="badge">{{banner.id}}</span> {{banner.name}}
+    </a>
+    <button class="delete" title="delete banner" (click)="delete(banner)">x</button>
+    <ul class="campaigns">
+      <div>Campaigns: </div>
+      <li *ngFor="let campaign of banner.campaigns">
+        <span>{{campaign}}</span>
+      </li>
+    </ul>
+  </li>
+</ul>

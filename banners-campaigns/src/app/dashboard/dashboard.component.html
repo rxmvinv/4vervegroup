@@ -1,0 +1,10 @@
+<h3>Top Banners</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let banner of banners" class="col-1-4" routerLink="/detail/{{banner.id}}">
+    <div class="module banner">
+      <h4>{{banner.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-banner-search></app-banner-search>

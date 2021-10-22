@@ -1,0 +1,57 @@
+<h2>My Campaigns</h2>
+<div>
+  <label>Campaign name:
+    <input #campaignName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(campaignName.value); campaignName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="campaigns">
+  <li *ngFor="let campaign of campaigns" class="item">
+    <span class="badge">{{campaign.name}}</span>
+    <button class="delete" title="delete campaign" (click)="delete(campaign)">x</button>
+
+    <div class="banners-section">
+      Assign banners to campaign:
+      <ul class="campaign-banners">
+        <li *ngFor="let banner of banners">
+          <button 
+            class="badge" 
+            (click)="assignBanner(campaign, banner)"
+            [class.selected]="campaign.id === banner.id"
+          >
+            {{banner.id}} {{banner.name}}
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="activity-section">
+      Set activity period:
+      <button
+        (click)="setActivityTime(campaign,1)"
+        [class.selected]="campaign.activity && campaign.activity[0] === 1"
+      >13:00 - 13:59</button>
+      <button
+        (click)="setActivityTime(campaign,2)"
+        [class.selected]="campaign.activity && campaign.activity[0] === 2"
+        >14:00 - 14:59</button>
+      <button
+        (click)="setActivityTime(campaign,3)"
+        [class.selected]="campaign.activity && campaign.activity[0] === 3"
+      >15:00 - 15:59</button>
+    </div>
+    <span>
+      {{
+        (campaign.activity && 
+          currentTime >= campaign.activity[1] &&
+          currentTime < campaign.activity[1] + 1) ?
+          'Campaign is active' : 'Campaign is not active'
+      }}
+    </span>
+  </li>
+
+</ul>
