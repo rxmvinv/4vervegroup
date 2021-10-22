@@ -1,6 +1,6 @@
 # 4vervegroup
 
-##
+## API:
 
 ```
 cd API
@@ -8,20 +8,18 @@ cd API
 
 ```
 npm install
-```
+
+npm start
 
 ```
-npm start
-```
+
+## Client:
 
 ```
 cd banners-campaigns
-```
 
-```
 npm install
-```
 
-```
 ng serve
+
 ```
